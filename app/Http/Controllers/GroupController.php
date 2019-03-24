@@ -76,9 +76,10 @@ class GroupController extends AppBaseController
     //public function store(Request $request)
     {
         $apps = App::all();
+        $group = new Group;
         //dd($request);
         //$input = $request->all();
-        $group = $this->groupRepository->create($input);
+        //$group = $this->groupRepository->create($input);
 
         $this->validate($request, array(
             'group_name' => 'required|max:255',

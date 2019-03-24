@@ -17,6 +17,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::post('/register','AuthController@register');
+// Route::post('/login','AuthController@login');
+
+//Workings START
+// Route::middleware('auth:api')->post('/register', '\App\Http\Controllers\Api\AuthController@register');
+
+// Route::middleware('auth:api')->post('/login', '\App\Http\Controllers\Api\AuthController@login');
+//Working END
+
+
+Route::post('/register','\App\Http\Controllers\Api\AuthController@register');
+Route::post('/login','\App\Http\Controllers\Api\AuthController@login');
+
+
 // App\\Http\\Controllers\\API\\UserController
 // Route::middleware('auth:api')->get('/users', 'UserController@index');
 Route::middleware('auth:api')->get('/users', '\App\Http\Controllers\UserController@index');
